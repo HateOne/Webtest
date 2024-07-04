@@ -1,1 +1,1 @@
-![example workflow](https://github.com/HateOne/Webtest/actions/runs/9792657391)
+[![Java CI with Gradle](https://github.com/HateOne/Webtest/actions/workflows/gradle-publish.yml/badge.svg)](https://github.com/HateOne/Webtest/actions/workflows/gradle-publish.yml)
