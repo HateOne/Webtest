@@ -1,4 +1,5 @@
-package ru.netology.web;
+package org.example;
+
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
@@ -72,6 +73,7 @@ public class CardOrderFormTest {
                 driver.findElement(By.cssSelector("[data-test-id ='name'].input_invalid .input__sub")).getText().trim());
         assertTrue(driver.findElement(By.cssSelector("[data-test-id ='name'].input_invalid .input__sub")).isDisplayed());
     }
+
     @Test
     public void shouldCardOrderFormNoPhone() {
         driver.findElement(By.cssSelector("[data-test-id ='name'] input")).sendKeys("Никита Храмов");
@@ -82,6 +84,7 @@ public class CardOrderFormTest {
                 driver.findElement(By.cssSelector("[data-test-id ='phone'].input_invalid .input__sub")).getText().trim());
         assertTrue(driver.findElement(By.cssSelector("[data-test-id ='phone'].input_invalid .input__sub")).isDisplayed());
     }
+
     @Test
     public void shouldCardOrderFormEmptyPhone() {
         driver.findElement(By.cssSelector("[data-test-id ='name'] input")).sendKeys("Никита Храмов");
@@ -91,6 +94,7 @@ public class CardOrderFormTest {
                 driver.findElement(By.cssSelector("[data-test-id ='phone'].input_invalid .input__sub")).getText().trim());
         assertTrue(driver.findElement(By.cssSelector("[data-test-id ='phone'].input_invalid .input__sub")).isDisplayed());
     }
+
     @Test
     public void shouldCardOrderFormEmptyCheckbox() {
         driver.findElement(By.cssSelector("[data-test-id ='name'] input")).sendKeys("Никита Храмов");
