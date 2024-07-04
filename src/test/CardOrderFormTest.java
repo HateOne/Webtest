@@ -41,8 +41,8 @@ public class CardOrderFormTest {
 
     @Test
     public void shouldSendCardOrderFormSuccessful() {
-        driver.findElement(By.cssSelector("[data-test-id ='name'] input")).sendKeys("Петров Иван");
-        driver.findElement(By.cssSelector("[data-test-id ='phone'] input")).sendKeys("+79034568790");
+        driver.findElement(By.cssSelector("[data-test-id ='name'] input")).sendKeys("Никита Храмов");
+        driver.findElement(By.cssSelector("[data-test-id ='phone'] input")).sendKeys("+79934656881");
         driver.findElement(By.cssSelector("[data-test-id ='agreement']")).click();
         driver.findElement(By.cssSelector("button.button")).click();
         var actualTextElement = driver.findElement(By.cssSelector("[data-test-id=order-success]"));
@@ -54,7 +54,7 @@ public class CardOrderFormTest {
     @Test
     public void shouldCardOrderFormNoName() {
 
-        driver.findElement(By.cssSelector("[data-test-id ='phone'] input")).sendKeys("+79034568790");
+        driver.findElement(By.cssSelector("[data-test-id ='phone'] input")).sendKeys("+79934656881");
         driver.findElement(By.cssSelector("[data-test-id ='agreement']")).click();
         driver.findElement(By.cssSelector("button.button")).click();
         assertEquals("Поле обязательно для заполнения",
@@ -64,8 +64,8 @@ public class CardOrderFormTest {
 
     @Test
     public void shouldCardOrderFormIncorrectName() {
-        driver.findElement(By.cssSelector("[data-test-id ='name'] input")).sendKeys("Julia");
-        driver.findElement(By.cssSelector("[data-test-id ='phone'] input")).sendKeys("+79034568790");
+        driver.findElement(By.cssSelector("[data-test-id ='name'] input")).sendKeys("Hramov");
+        driver.findElement(By.cssSelector("[data-test-id ='phone'] input")).sendKeys("+79934656881");
         driver.findElement(By.cssSelector("[data-test-id ='agreement']")).click();
         driver.findElement(By.cssSelector("button.button")).click();
         assertEquals("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.",
@@ -74,8 +74,8 @@ public class CardOrderFormTest {
     }
     @Test
     public void shouldCardOrderFormNoPhone() {
-        driver.findElement(By.cssSelector("[data-test-id ='name'] input")).sendKeys("Петров Иван");
-        driver.findElement(By.cssSelector("[data-test-id ='phone'] input")).sendKeys("Pavel");
+        driver.findElement(By.cssSelector("[data-test-id ='name'] input")).sendKeys("Никита Храмов");
+        driver.findElement(By.cssSelector("[data-test-id ='phone'] input")).sendKeys("45");
         driver.findElement(By.cssSelector("[data-test-id ='agreement']")).click();
         driver.findElement(By.cssSelector("button.button")).click();
         assertEquals("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.",
@@ -84,7 +84,7 @@ public class CardOrderFormTest {
     }
     @Test
     public void shouldCardOrderFormEmptyPhone() {
-        driver.findElement(By.cssSelector("[data-test-id ='name'] input")).sendKeys("Петров Иван");
+        driver.findElement(By.cssSelector("[data-test-id ='name'] input")).sendKeys("Никита Храмов");
         driver.findElement(By.cssSelector("[data-test-id ='agreement']")).click();
         driver.findElement(By.cssSelector("button.button")).click();
         assertEquals("Поле обязательно для заполнения",
@@ -93,8 +93,8 @@ public class CardOrderFormTest {
     }
     @Test
     public void shouldCardOrderFormEmptyCheckbox() {
-        driver.findElement(By.cssSelector("[data-test-id ='name'] input")).sendKeys("Петров Иван");
-        driver.findElement(By.cssSelector("[data-test-id ='phone'] input")).sendKeys("+79034568790");
+        driver.findElement(By.cssSelector("[data-test-id ='name'] input")).sendKeys("Никита Храмов");
+        driver.findElement(By.cssSelector("[data-test-id ='phone'] input")).sendKeys("+79934656881");
         driver.findElement(By.cssSelector("button.button")).click();
         driver.findElement(By.cssSelector("[data-test-id ='agreement'].input_invalid"));
         assertTrue(driver.findElement(By.cssSelector("[data-test-id ='agreement'].input_invalid")).isDisplayed());
